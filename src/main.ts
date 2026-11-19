@@ -193,7 +193,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           loading="lazy"
           decoding="async"
         />
-        <div class="about-content"><p class="eyebrow"><span></span> Mennesket bag</p><h2>Ordentlighed<br />er en del af <em>arbejdet.</em></h2><p>Arevad Ejendomsservice er bygget på ønsket om at levere kvalitetsarbejde, der passer til den enkelte kundes behov. Vi holder, hvad vi lover, og går først, når opgaven er løst ordentligt.</p><p>Det gælder, uanset om du har brug for hjælp i haven, på fællesarealerne eller omkring hele ejendommen.</p><a class="button button-outline" href="#kontakt">Lad os tage en snak <span>↗</span></a></div>
+        <div class="about-content"><p class="eyebrow"><span></span> Mennesket bag</p><h2>Jeg hedder<br /><em>Karsten Arevad.</em></h2><p>Jeg hjælper med opgaver i haven, på fællesarealer og omkring ejendomme. Jeg kommer selv ud og ser på opgaven, så vi sammen kan finde den løsning, der passer til dig.</p><p>Med over 25 års erfaring kan jeg hjælpe dig med at afklare opgaven, gennemgå mulighederne og finde en praktisk løsning, der passer til din ejendom.</p><p>For mig handler godt arbejde om ordentlighed: at holde, hvad jeg lover, og først gå, når opgaven er løst ordentligt. Har du en opgave, er du velkommen til at tage en snak med mig.</p><a class="button button-outline" href="#kontakt">Tag en snak med mig <span>↗</span></a></div>
       </div>
       <div class="container">
         <img
