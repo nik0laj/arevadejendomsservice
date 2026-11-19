@@ -6,9 +6,11 @@ const services = [
     number: '01',
     title: 'Haveservice',
     text: 'Få en have, der er rar at være i. Vi hjælper med den løbende pleje og de større opgaver.',
-    items: ['Plæne- og hækklipning', 'Beskæring og træfældning', 'Hegn, terrasser og stier'],
+    items: ['Plæne- og hækklipning', 'Beskæring og træfældning', 'Stubfræsning', 'Hegn, terrasser og stier'],
     image: 'assets/arevad-plaeneklipning.jpg',
     imageAlt: 'Plæneklipning udført af Arevad Ejendomsservice',
+    imageWidth: 575,
+    imageHeight: 200,
   },
   {
     number: '02',
@@ -17,14 +19,18 @@ const services = [
     items: ['Plænepleje og vedligeholdelse', 'Buske og beplantning', 'Aftaler til foreninger og virksomheder'],
     image: 'assets/arevad-haveservice.jpg',
     imageAlt: 'Hæk og grønne arealer i en have',
+    imageWidth: 575,
+    imageHeight: 321,
   },
   {
     number: '03',
     title: 'Ejendomsservice',
     text: 'En ekstra hånd til de praktiske opgaver, så ejendommen er pæn, tryg og klar til hverdagen.',
     items: ['Vicevært- og driftsopgaver', 'Storskrald og aflæsninger', 'Maling, flyttesyn og klargøring'],
-    image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Velholdt ejendom og bolig',
+    image: 'assets/arevad-servicebil.jpg',
+    imageAlt: 'Karsten ved Arevad Ejendomsservices servicebil',
+    imageWidth: 575,
+    imageHeight: 227,
   },
 ];
 
@@ -43,8 +49,8 @@ const serviceCards = services
             srcset="${responsiveSrcSet(service.image)}"
             sizes="(max-width: 640px) 100vw, (max-width: 1000px) 50vw, 33vw"
             alt="${service.imageAlt}"
-            width="1200"
-            height="800"
+            width="${service.imageWidth}"
+            height="${service.imageHeight}"
             loading="lazy"
             decoding="async"
           />
@@ -54,7 +60,7 @@ const serviceCards = services
           <h3>${service.title}</h3>
           <p>${service.text}</p>
           <ul>${service.items.map((item) => `<li>${item}</li>`).join('')}</ul>
-          <a class="text-link" href="#kontakt">Læs mere <span>↗</span></a>
+          <a class="text-link" href="#kontakt">Få et tilbud <span>↗</span></a>
         </div>
       </article>
     `,
@@ -67,8 +73,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <a class="brand" href="#top" aria-label="Arevad Ejendomsservice forside">
         <img class="brand-logo" src="assets/arevad-logo-transparent.png" alt="Arevad Ejendomsservice - Praktisk hjælp til hus og have" />
       </a>
-      <button class="menu-toggle" aria-label="Åbn menu" aria-expanded="false"><span></span><span></span><span></span></button>
-      <nav class="main-nav" aria-label="Hovedmenu">
+      <button class="menu-toggle" aria-label="Åbn menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Hovedmenu">
         <a href="#ydelser">Ydelser</a>
         <a href="#om-os">Om os</a>
         <a href="#proces">Sådan arbejder vi</a>
@@ -85,7 +91,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <p class="hero-lead">Vi holder dine grønne arealer og din ejendom i god stand — med ordentlighed, erfaring og blik for detaljen.</p>
         <div class="hero-actions">
           <a class="button button-dark" href="#kontakt">Få et uforpligtende tilbud <span>↗</span></a>
-          <a class="phone-link" href="tel:+4526884884"><span class="phone-icon">⌕</span> 26 884 884</a>
+          <a class="phone-link" href="tel:+4526884884"><svg class="phone-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.56 3.58.56a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.19 2.46.56 3.58a1 1 0 01-.25 1.02l-2.19 2.19z" /></svg> 26 884 884</a>
         </div>
         <div class="hero-note"><span class="check">✓</span> Vi kommer altid forbi og ser på opgaven først</div>
       </div>
@@ -114,7 +120,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         </div>
         <div class="intro-copy">
           <p>Hos Arevad Ejendomsservice får du en fast og pålidelig samarbejdspartner til de opgaver, der får hus, have og ejendom til at fungere.</p>
-          <p>Vi hjælper private, virksomheder, grundejerforeninger og boligselskaber i Nordsjælland og København.</p>
+          <p>Vi hjælper private, virksomheder, grundejerforeninger og boligselskaber i Nordsjælland og København. Vi har særligt fokus på Gribskov Kommune og byer som Helsinge, Hillerød, Frederiksværk, Hundested, Græsted og Gilleleje.</p>
           <a class="text-link" href="#om-os">Mød Karsten <span>↗</span></a>
         </div>
       </div>
@@ -148,17 +154,17 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           <article class="review-card">
             <p class="review-rating" aria-label="5 ud af 5 stjerner">★★★★★ <span>5/5 på Trustpilot</span></p>
             <blockquote class="review-quote">På en uge fik vi fjernet den gamle fliseterrasse, gravet jord af og lagt ny stor træterrasse. … alt ryddet pænt op.</blockquote>
-            <p class="review-author">Gitte Sjøltov</p>
+            <p class="review-author">Gitte S.</p>
           </article>
           <article class="review-card">
             <p class="review-rating" aria-label="5 ud af 5 stjerner">★★★★★ <span>5/5 på Trustpilot</span></p>
             <blockquote class="review-quote">Det var hurtigt og rigtig pænt arbejde. … Venlig og imødekommende.</blockquote>
-            <p class="review-author">Marianne Fjelsted</p>
+            <p class="review-author">Marianne F.</p>
           </article>
           <article class="review-card">
             <p class="review-rating" aria-label="5 ud af 5 stjerner">★★★★★ <span>5/5 på Trustpilot</span></p>
             <blockquote class="review-quote">Fik klippet min hæk af Arevad Service og kan kun tilstå at den service jeg fik, overgik hvad jeg forventede. … Det er ikke sidste gang, vi har brugt Arevad Service.</blockquote>
-            <p class="review-author">Peter Munch Nielsen</p>
+            <p class="review-author">Peter N.</p>
           </article>
         </div>
         <p class="reviews-note">Forkortede citater fra Trustpilot. Udeladelser er markeret med …</p>
@@ -205,7 +211,14 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <section class="contact section-pad" id="kontakt">
       <div class="container contact-grid">
         <div class="contact-intro"><p class="eyebrow"><span></span> Skal vi hjælpe dig?</p><h2>Fortæl os om<br /><em>din opgave.</em></h2><p>Ring til Karsten eller send en besked. Vi vender tilbage hurtigst muligt.</p><div class="contact-details"><a href="tel:+4526884884"><small>Telefon</small><strong>26 884 884</strong></a><a href="mailto:mail@arevadservice.dk"><small>E-mail</small><strong>mail@arevadservice.dk</strong></a><div><small>Adresse</small><strong>Engsvinget 8<br />3200 Helsinge</strong></div></div></div>
-        <form class="contact-form"><label>Dit navn<input type="text" name="name" placeholder="Skriv dit navn" required /></label><label>Telefon eller e-mail<input type="text" name="contact" placeholder="Hvordan kontakter vi dig?" required /></label><label>Hvad skal vi hjælpe med?<textarea name="message" rows="4" placeholder="Fortæl kort om opgaven"></textarea></label><button class="button button-dark" type="submit">Send forespørgsel <span>↗</span></button><p class="form-status" role="status"></p></form>
+        <form class="contact-form">
+          <label>Dit navn<input type="text" name="name" placeholder="Skriv dit navn" autocomplete="name" required /></label>
+          <label>Telefon eller e-mail<input type="text" name="contact" placeholder="Hvordan kontakter vi dig?" required /></label>
+          <label>Hvad skal vi hjælpe med?<textarea name="message" rows="4" placeholder="Fortæl kort om opgaven"></textarea></label>
+          <button class="button button-dark" type="submit">Åbn e-mail for at sende <span>↗</span></button>
+          <p class="form-help">En e-mailkladde til Arevad åbnes med dine oplysninger. Du sender den selv fra din e-mail-app; oplysningerne bruges til at besvare din henvendelse.</p>
+          <p class="form-status" role="status"></p>
+        </form>
       </div>
     </section>
   </main>
@@ -238,14 +251,39 @@ const nav = document.querySelector<HTMLElement>('.main-nav');
 menuToggle?.addEventListener('click', () => {
   const isOpen = nav?.classList.toggle('is-open') ?? false;
   menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.setAttribute('aria-label', isOpen ? 'Luk menu' : 'Åbn menu');
 });
 nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
   nav.classList.remove('is-open');
   menuToggle?.setAttribute('aria-expanded', 'false');
+  menuToggle?.setAttribute('aria-label', 'Åbn menu');
 }));
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && nav?.classList.contains('is-open')) {
+    nav.classList.remove('is-open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle?.setAttribute('aria-label', 'Åbn menu');
+    menuToggle?.focus();
+  }
+});
 
-document.querySelector<HTMLFormElement>('.contact-form')?.addEventListener('submit', (event) => {
+const contactForm = document.querySelector<HTMLFormElement>('.contact-form');
+contactForm?.addEventListener('submit', (event) => {
   event.preventDefault();
+  const formData = new FormData(contactForm);
+  const name = String(formData.get('name') ?? '').trim();
+  const contact = String(formData.get('contact') ?? '').trim();
+  const message = String(formData.get('message') ?? '').trim();
+  const body = [`Navn: ${name}`, `Telefon eller e-mail: ${contact}`, `Besked: ${message || '(ikke angivet)'}`].join('\n');
+  const mailtoUrl = `mailto:mail@arevadservice.dk?subject=${encodeURIComponent('Forespørgsel via Arevad Ejendomsservice')}&body=${encodeURIComponent(body)}`;
   const status = document.querySelector<HTMLParagraphElement>('.form-status');
-  if (status) status.textContent = 'Tak for din forespørgsel — ring gerne på 26 884 884, så tager vi en snak.';
+  if (status) {
+    status.textContent = 'Vi forsøger at åbne din e-mail-app. Husk selv at trykke Send. Hvis den ikke åbner, skriv til ';
+    const emailLink = document.createElement('a');
+    emailLink.href = 'mailto:mail@arevadservice.dk';
+    emailLink.textContent = 'mail@arevadservice.dk';
+    status.append(emailLink);
+    status.append(' eller ring på 26 884 884.');
+  }
+  window.location.href = mailtoUrl;
 });
