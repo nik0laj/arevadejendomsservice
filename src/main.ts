@@ -7,8 +7,8 @@ const services = [
     title: 'Haveservice',
     text: 'Få en have, der er rar at være i. Vi hjælper med den løbende pleje og de større opgaver.',
     items: ['Plæne- og hækklipning', 'Beskæring og træfældning', 'Hegn, terrasser og stier'],
-    image: 'https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Have og grønne arealer under vedligeholdelse',
+    image: 'assets/arevad-plaeneklipning.jpg',
+    imageAlt: 'Plæneklipning udført af Arevad Ejendomsservice',
   },
   {
     number: '02',
@@ -180,16 +180,25 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <div class="container about-grid">
         <img
           class="about-image"
-          src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?auto=format&fit=crop&w=1200&q=85"
-          srcset="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?auto=format&fit=crop&w=480&q=80 480w, https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?auto=format&fit=crop&w=800&q=85 800w, https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?auto=format&fit=crop&w=1200&q=85 1200w"
-          sizes="(max-width: 900px) 100vw, 50vw"
-          alt="Have med grøn beplantning"
-          width="1200"
-          height="900"
+          src="assets/karsten-arevad.jpg"
+          alt="Karsten Arevad i haven"
+          width="300"
+          height="200"
           loading="lazy"
           decoding="async"
         />
         <div class="about-content"><p class="eyebrow"><span></span> Mennesket bag</p><h2>Ordentlighed<br />er en del af <em>arbejdet.</em></h2><p>Arevad Ejendomsservice er bygget på ønsket om at levere kvalitetsarbejde, der passer til den enkelte kundes behov. Vi holder, hvad vi lover, og går først, når opgaven er løst ordentligt.</p><p>Det gælder, uanset om du har brug for hjælp i haven, på fællesarealerne eller omkring hele ejendommen.</p><a class="button button-outline" href="#kontakt">Lad os tage en snak <span>↗</span></a></div>
+      </div>
+      <div class="container">
+        <img
+          class="about-van"
+          src="assets/arevad-servicebil.jpg"
+          alt="Karsten ved Arevad Ejendomsservices servicebil"
+          width="575"
+          height="227"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </section>
 
