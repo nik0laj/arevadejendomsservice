@@ -1,0 +1,536 @@
+img {
+  max-width: 100%;
+}
+
+.container,
+.hero-text,
+.hero-visual,
+.intro-grid > *,
+.about-grid > *,
+.contact-grid > * {
+  min-width: 0;
+}
+
+.hero-visual {
+  min-height: 640px;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 640px;
+  object-fit: cover;
+}
+
+.service-image {
+  overflow: hidden;
+}
+
+.service-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: none;
+}
+
+.brand-logo {
+  mix-blend-mode: normal;
+}
+
+.footer-brand .brand-logo {
+  width: 220px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.2fr) repeat(2, minmax(180px, 1fr));
+  align-items: start;
+  gap: 28px;
+  color: #c4d2c4;
+  font-size: 13px;
+}
+
+.footer-brand-block > p {
+  margin: 12px 0 0;
+}
+
+.footer-contact,
+.footer-business {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+}
+
+.footer-heading {
+  margin: 0 0 4px;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-contact a,
+.footer-business address,
+.footer-business p {
+  margin: 0;
+  color: #c4d2c4;
+  font-size: 13px;
+  font-style: normal;
+  overflow-wrap: anywhere;
+}
+
+.footer-contact a:hover {
+  color: var(--lime);
+}
+
+.footer-legal {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: #c4d2c4;
+  font-size: 12px;
+}
+
+.button,
+.nav-cta {
+  min-height: 48px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  min-height: 44px;
+  font-size: 16px;
+}
+
+.reviews {
+  background: #edf1e8;
+}
+
+.reviews-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 36px;
+}
+
+.reviews-heading h2 {
+  margin: 0;
+  color: var(--deep);
+  font-family: Manrope, sans-serif;
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.review-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(22px, 3vw, 32px);
+  background: var(--cream);
+  box-shadow: 0 10px 24px rgba(27, 54, 30, 0.05);
+}
+
+.review-rating {
+  margin: 0 0 18px;
+  color: var(--green);
+  font-size: 19px;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+}
+
+.review-rating span {
+  display: block;
+  margin-top: 5px;
+  color: #647064;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.review-quote {
+  flex: 1;
+  margin: 0 0 24px;
+  color: #435247;
+  font-size: 15px;
+}
+
+.review-author {
+  margin: 0;
+  color: var(--deep);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.reviews-note {
+  margin: 18px 0 0;
+  color: #647064;
+  font-size: 12px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #6b922c;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1000px) {
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-content p {
+    min-height: 0;
+  }
+
+  .reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .hero-text {
+    padding-right: 36px;
+    padding-left: 36px;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .phone-link {
+    white-space: nowrap;
+  }
+
+  .hero-note {
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .header-inner {
+    height: 76px;
+  }
+
+  .brand-logo {
+    width: 180px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 76px;
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 16px 24px 24px;
+    background: var(--cream);
+    box-shadow: 0 10px 20px #123b2517;
+  }
+
+  .main-nav.is-open {
+    display: flex;
+  }
+
+  .main-nav a:not(.nav-cta) {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .nav-cta {
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-text {
+    width: 100%;
+    padding: clamp(48px, 8vw, 78px) clamp(24px, 7vw, 64px);
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 8vw, 64px);
+  }
+
+  .hero-visual {
+    min-height: clamp(300px, 58vw, 500px);
+  }
+
+  .hero-image {
+    min-height: inherit;
+  }
+
+  .hero-sticker {
+    left: 24px;
+    bottom: 24px;
+  }
+
+  .section-pad {
+    padding: clamp(64px, 9vw, 88px) 0;
+  }
+
+  .intro-grid,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .intro-copy {
+    max-width: 650px;
+    padding-top: 0;
+  }
+
+  .about-image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 42px;
+  }
+
+  .step p {
+    max-width: 560px;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .brand-logo {
+    width: 160px;
+  }
+
+  .hero-text {
+    padding: 48px 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 10.5vw, 48px);
+    overflow-wrap: anywhere;
+  }
+
+  .hero-lead {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .phone-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .hero-note {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 28px;
+  }
+
+  .hero-note .check {
+    flex: 0 0 20px;
+  }
+
+  .hero-visual {
+    min-height: clamp(260px, 72vw, 380px);
+  }
+
+  .hero-sticker {
+    width: 108px;
+    height: 108px;
+  }
+
+  .hero-sticker strong {
+    font-size: 29px;
+  }
+
+  .section-pad {
+    padding: 64px 0;
+  }
+
+  .intro h2,
+  .section-heading h2,
+  .process-head h2,
+  .about-content h2,
+  .contact h2 {
+    font-size: clamp(34px, 9vw, 42px);
+  }
+
+  .section-heading {
+    margin-bottom: 32px;
+  }
+
+  .section-heading > p {
+    margin-top: 18px;
+  }
+
+  .service-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .reviews-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .service-image {
+    height: clamp(180px, 55vw, 260px);
+  }
+
+  .service-content {
+    padding: 24px 22px;
+  }
+
+  .service-content p {
+    min-height: 0;
+  }
+
+  .about-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .contact-details {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .contact-details div {
+    grid-column: auto;
+  }
+
+  .contact-form {
+    padding: 24px 20px;
+  }
+
+  .contact-form .button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 20px;
+  }
+
+  .footer-brand-block {
+    grid-column: 1 / -1;
+  }
+
+  .footer-brand .brand-logo {
+    width: min(220px, 70vw);
+  }
+}
+
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-sticker {
+    width: 96px;
+    height: 96px;
+  }
+
+  .contact-form {
+    padding: 20px 16px;
+  }
+
+  .footer-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer-brand-block,
+  .footer-legal {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
