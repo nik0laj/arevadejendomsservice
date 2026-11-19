@@ -46,8 +46,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Arevad Ejendomsservice forside">
-        <span class="brand-mark" aria-hidden="true"><span></span></span>
-        <span class="brand-copy"><strong>AREVAD</strong><small>Ejendomsservice</small></span>
+        <img class="brand-logo" src="/assets/arevad-logo.png" alt="Arevad Ejendomsservice - Praktisk hjælp til hus og have" />
       </a>
       <button class="menu-toggle" aria-label="Åbn menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="main-nav" aria-label="Hovedmenu">
@@ -128,7 +127,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-copy"><strong>AREVAD</strong><small>Ejendomsservice</small></span></a><p>Praktisk hjælp til hus og have.</p><p>© ${new Date().getFullYear()} Arevad Ejendomsservice</p></div></footer>
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="#top"><img class="brand-logo" src="/assets/arevad-logo.png" alt="Arevad Ejendomsservice" /></a><p>Praktisk hjælp til hus og have.</p><p>© ${new Date().getFullYear()} Arevad Ejendomsservice</p></div></footer>
 `;
 
 const menuToggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
